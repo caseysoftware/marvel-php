@@ -1,6 +1,6 @@
 <?php
 
-abstract class Services_Marvel_Resources_List
+abstract class Services_Marvel_Resources_Loader
 {
     protected $client = null;
 
