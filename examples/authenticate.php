@@ -10,6 +10,7 @@ include_once '../Services/Marvel.php';
  */
 $client = new Services_Marvel($public_key, $private_key);
 
-$client->authenticate();
+$comics = $client->comics->index();
 
-print_r($client);
+echo $comics->code . "\n";
+echo $comics->data->total . " comics \n\n";

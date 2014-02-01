@@ -15,18 +15,18 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 
 *  Implement HTTP handler
 *  Implement authentication
-*  Implement Character List
+*  Implement Character List and pagination
 *  Implement Character Load
 *  Implement Character's comic lookup, events lookup, stories lookup
-*  Implement Comic List
+*  Implement <s>Comic List</s> and pagination
 *  Implement Comic Load
 *  Implement Comic's character lookup, creators lookup, events lookup, stories lookup
-*  Implement Creators List
+*  Implement Creators List and pagination
 *  Implement Creator Load
 *  Implement Creator's comic lookup, events lookup, stories lookup
-*  Implement Series List
+*  Implement Series List and pagination
 *  Implement Series Load
 *  Implement Series' character lookup, comic lookup, creator lookup, event lookup, stories lookup
-*  Implement Stories List
+*  Implement Stories List and pagination
 *  Implement Story Load
 *  Implement Stories' character lookup, comic lookup, creator lookup, event lookup

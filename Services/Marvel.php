@@ -18,7 +18,7 @@ class Services_Marvel
     const USER_AGENT = 'marvel-php/0.0.1';
 
     protected $baseUri = 'http://gateway.marvel.com/';
-    protected $version = 'v1/';
+    protected $version = 'v1/public/';
 
     protected $public_key = null;
     protected $private_key = null;
@@ -34,19 +34,26 @@ class Services_Marvel
         $this->private_key = $private_key;
     }
 
-    public function authenticate()
+    public function __get($name)
     {
-        $timestamp = time();
-        $params = array();
-        $params['ts'] = $timestamp;
-        $params['apikey'] = $this->public_key;
-        $params['hash'] = md5($timestamp . $this->private_key . $this->public_key);
+        $classname = 'Services_Marvel_'.ucwords($name);
 
-        $this->get($this->baseUri . $this->version . 'public/comics' , $params);
+        try {
+            $object = new $classname($this);
+        } catch (Exception $exc) {
+            print_r($exc);
+        }
+
+        return $object;
     }
 
     public function get($uri, $params = array())
     {
+        $timestamp = time();
+        $params['ts'] = $timestamp;
+        $params['apikey'] = $this->public_key;
+        $params['hash'] = md5($timestamp . $this->private_key . $this->public_key);
+
         $uri .= (count($params)) ? '?'.http_build_query($params) : '';
 
         $curl_opts = array(
@@ -79,5 +86,10 @@ class Services_Marvel
         $this->response_obj     = json_decode($this->response_json);
 
         curl_close($connection);
+    }
+
+    public function getUri()
+    {
+        return $this->baseUri . $this->version;
     }
 }
