@@ -1,6 +1,6 @@
 <?php
 
-class Services_Marvel_Comic
+class Services_Marvel_Comic extends Services_Marvel_Resources_Base
 {
     public $id = '';
     public $digitalId = '';
@@ -31,14 +31,4 @@ class Services_Marvel_Comic
     public $characters = '';
     public $stories = '';
     public $events = '';
-
-    public function bind($object)
-    {
-        foreach($object as $property => $value)
-        {
-            $this->$property = $value;
-        }
-
-        return $this;
-    }
 }

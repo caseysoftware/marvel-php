@@ -1,6 +1,6 @@
 <?php
 
-class Services_Marvel_Character
+class Services_Marvel_Character extends Services_Marvel_Resources_Base
 {
     public $id = '';
     public $name = '';
@@ -13,14 +13,4 @@ class Services_Marvel_Character
     public $stories = '';
     public $events = '';
     public $urls = '';
-
-    public function bind($object)
-    {
-        foreach($object as $property => $value)
-        {
-            $this->$property = $value;
-        }
-
-        return $this;
-    }
 }
