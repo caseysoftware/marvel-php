@@ -27,4 +27,16 @@ abstract class Services_Marvel_Resources_List
 
         return $this->client->response_obj->data->results;
     }
+
+    public function get($id)
+    {
+        $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
+
+        if ($this->client->response_code != 200) {
+            throw new Services_Marvel_Exceptions_NotFound("No $this->resource_name was found with id: $id", 404);
+        }
+
+        $object = new $this->resource_class();
+        return $object->bind($this->client->response_obj->data->results[0]);
+    }
 }
