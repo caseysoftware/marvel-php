@@ -16,7 +16,7 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  ~~Implement HTTP handler~~
 *  ~~Implement authentication~~
 *  ~~Implement Character List and pagination~~
-*  Implement Character Load
+*  ~~Implement Character Load~~
 *  Implement Character's comic lookup, events lookup, stories lookup
 *  ~~Implement Comic List and pagination~~
 *  Implement Comic Load
