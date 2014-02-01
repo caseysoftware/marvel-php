@@ -15,14 +15,15 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 
 *  ~~Implement HTTP handler~~
 *  ~~Implement authentication~~
+*  Add error handling for auth errors
 *  ~~Implement Character List and pagination~~
 *  ~~Implement Character Load~~
 *  Implement Character's comic lookup, events lookup, stories lookup
 *  ~~Implement Comic List and pagination~~
-*  Implement Comic Load
+*  ~~Implement Comic Load~~
 *  Implement Comic's character lookup, creators lookup, events lookup, stories lookup
 *  ~~Implement Creators List and pagination~~
-*  Implement Creator Load
+*  ~~Implement Creator Load~~
 *  Implement Creator's comic lookup, events lookup, stories lookup
 *  ~~Implement Series List and pagination~~
 *  Implement Series Load
