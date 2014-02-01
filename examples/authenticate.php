@@ -8,5 +8,8 @@ include_once '../Services/Marvel.php';
  *    I believe it is better fundamentally because it doesn't retain a state
  *    between requests.
  */
-$client = new Services_Marvel(array('api_key' => $apiKey));
+$client = new Services_Marvel($public_key, $private_key);
 
+$client->authenticate();
+
+print_r($client);
