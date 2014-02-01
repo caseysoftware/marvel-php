@@ -3,7 +3,7 @@ marvel-php
 
 This is a helper library for the Marvel Comics API - http://developer.marvel.com/
 
-It is modeled after the Twilio PHP Helper library because I think it's generally well done and thought through. This isn't official but should generally work except for the incomplete items in the TODO list below.
+This isn't official but should generally work except for the incomplete items in the TODO list below.
 
 All characters - no matter how awesome they are - are owned by Marvel Comics.
 
