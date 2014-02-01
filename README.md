@@ -18,7 +18,7 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  Implement Character List and pagination
 *  Implement Character Load
 *  Implement Character's comic lookup, events lookup, stories lookup
-*  Implement <s>Comic List</s> and pagination
+*  ~~Implement Comic List and pagination~~
 *  Implement Comic Load
 *  Implement Comic's character lookup, creators lookup, events lookup, stories lookup
 *  Implement Creators List and pagination
