@@ -38,7 +38,7 @@ abstract class Services_Marvel_Resources_Loader
     {
         $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
 
-        if ($this->client->response_code != 200) {
+        if ($this->client->response_code == 404) {
             throw new Services_Marvel_Exceptions_NotFound("No $this->resource_name was found with id: $id", 404);
         }
 
