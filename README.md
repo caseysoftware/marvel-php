@@ -30,7 +30,7 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  Implement Creator's comic lookup, events lookup, stories lookup
 *  ~~Implement Event List and pagination~~
 *  Implement the optional parameters for the Event List
-*  Implement Event Load
+*  ~~Implement Event Load~~
 *  Implement Event's character lookup, comic lookup, creator lookup, stories lookup
 *  ~~Implement Series List and pagination~~
 *  Implement the optional parameters for the Series List
@@ -38,5 +38,5 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  Implement Series' character lookup, comic lookup, creator lookup, event lookup, stories lookup
 *  ~~Implement Stories List and pagination~~
 *  Implement the optional parameters for the Story List
-*  Implement Story Load
+*  ~~Implement Story Load~~
 *  Implement Stories' character lookup, comic lookup, creator lookup, event lookup
