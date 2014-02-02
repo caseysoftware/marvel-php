@@ -17,7 +17,7 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  ~~Implement authentication~~
 *  Add error handling for auth errors
 *  ~~Implement Character List and pagination~~
-*  Implement the optional parameters for the Character List
+*  ~~Implement the optional parameters for the Character List~~
 *  ~~Implement Character Load~~
 *  Implement Character's comic lookup, events lookup, stories lookup
 *  ~~Implement Comic List and pagination~~

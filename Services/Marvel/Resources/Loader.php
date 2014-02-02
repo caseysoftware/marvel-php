@@ -12,13 +12,19 @@ abstract class Services_Marvel_Resources_Loader
         $this->client = $client;
     }
 
-    public function index($page = 1, $limit = 100)
+    /**
+     * @param int $page     Page 1 is the first page
+     * @param int $limit    Defaults to 100 as per the API
+     * @param array $params Valid parameters are listed here: http://developer.marvel.com/docs
+     * @return mixed
+     */
+    public function index($page = 1, $limit = 100, $params = array())
     {
         $page = max($page, 1);
         $limit = min($limit, 100);
         $offset = ($page - 1) * $limit;
 
-        $params = array('offset' => $offset, 'limit' => $limit);
+        $params += array('offset' => $offset, 'limit' => $limit);
 
         $this->client->get($this->client->getUri() . $this->resource, $params);
 
