@@ -31,4 +31,11 @@ class Services_Marvel_Comic extends Services_Marvel_Resources_Base
     public $characters = '';
     public $stories = '';
     public $events = '';
+
+    public function __call($name, $arguments)
+    {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+    }
 }
