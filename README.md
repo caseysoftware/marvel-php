@@ -40,3 +40,9 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 *  Implement the optional parameters for the Story List
 *  ~~Implement Story Load~~
 *  Implement Stories' character lookup, comic lookup, creator lookup, event lookup
+
+## Notes
+
+*  The character name search doesn't support wildcards at all. It is looking for exact matches. For example, if you search for 'Spider Man' it won't find 'Spider-Man' which is the proper spelling.
+*  The index/list lookups take progressively longer the higher page number you request. For example, page 10 takes longer to load than page 3 which takes longer than page 1. I have not confirmed if this is linear.
+*  So far the optional parameters have no validation in this library... I'm not sure if it should occur here as it may break later versions of the API as those requirements change.
