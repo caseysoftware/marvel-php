@@ -47,6 +47,10 @@ class Services_Marvel
         return $object;
     }
 
+    /**
+     * @param $uri              Base uri that the request will go to
+     * @param array $params     Additional parameters to attach to the uri
+     */
     public function get($uri, $params = array())
     {
         $timestamp = time();

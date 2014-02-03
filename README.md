@@ -5,7 +5,7 @@ This is a helper library for the Marvel Comics API - http://developer.marvel.com
 
 This isn't official but should generally work except for the incomplete items in the TODO list below.
 
-All characters - no matter how awesome they are - are owned by Marvel Comics.
+All characters - no matter how awesome they are - are owned by Marvel Comics. Also, if you use this library, make sure you follow their attribution rules: http://developer.marvel.com/documentation/attribution
 
 ## Requirements
 
