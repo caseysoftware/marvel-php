@@ -11,4 +11,11 @@ abstract class Services_Marvel_Resources_Base
 
         return $this;
     }
+
+    public function __call($name, $arguments)
+    {
+        if (property_exists($this, $name)) {
+            return $this->$name;
+        }
+    }
 }
