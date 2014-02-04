@@ -9,20 +9,20 @@ try {
     $series = $client->series->get(454);
     echo $series->title . "\n";
 
+    $characters = $series->characters();
+    echo $characters->available . "\t" . $characters->collectionURI . "\n";
+
     $comics = $series->comics();
     echo $comics->available . "\t" . $comics->collectionURI . "\n";
 
-    $stories = $series->stories();
-    echo $stories->available . "\t" . $stories->collectionURI . "\n";
+    $creators = $series->creators();
+    echo $creators->available . "\t" . $creators->collectionURI . "\n";
 
     $events = $series->events();
     echo $events->available . "\t" . $events->collectionURI . "\n";
 
-    $characters = $series->characters();
-    echo $characters->available . "\t" . $characters->collectionURI . "\n";
-
-    $creators = $series->creators();
-    echo $creators->available . "\t" . $creators->collectionURI . "\n";
+    $stories = $series->stories();
+    echo $stories->available . "\t" . $stories->collectionURI . "\n";
 } catch (Exception $exc) {
     echo $exc->getMessage() . "\n";
 }

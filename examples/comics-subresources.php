@@ -16,16 +16,15 @@ try {
     $creators = $comic->creators();
     echo $creators->available . "\t" . $creators->collectionURI . "\n";
 
+    $events = $comic->events();
+    echo $events->available . "\t" . $events->collectionURI . "\n";
+
     $series = $comic->series();
     echo "\t" . $series->resourceURI . "\n";
 
     $stories = $comic->stories();
     // @todo The collectionURI here is an object instead of a string like it is specified in the docs.
     //echo $stories->available . "\t" . $stories->collectionURI . "\n";
-
-    $events = $comic->events();
-    echo $events->available . "\t" . $events->collectionURI . "\n";
-
 } catch (Exception $exc) {
     echo $exc->getMessage() . "\n";
 }

@@ -12,14 +12,14 @@ try {
     $comics = $character->comics();
     echo $comics->available . "\t" . $comics->collectionURI . "\n";
 
+    $events = $character->events();
+    echo $events->available . "\t" . $events->collectionURI . "\n";
+
     $series = $character->series();
     echo $series->available . "\t" . $series->collectionURI . "\n";
 
     $stories = $character->stories();
     echo $stories->available . "\t" . $stories->collectionURI . "\n";
-
-    $events = $character->events();
-    echo $events->available . "\t" . $events->collectionURI . "\n";
 } catch (Exception $exc) {
     echo $exc->getMessage() . "\n";
 }
