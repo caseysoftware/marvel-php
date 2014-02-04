@@ -17,10 +17,11 @@ try {
     echo $creators->available . "\t" . $creators->collectionURI . "\n";
 
     $series = $comic->series();
-    echo $series->available . "\t" . $series->collectionURI . "\n";
+    echo "\t" . $series->resourceURI . "\n";
 
     $stories = $comic->stories();
-    echo $stories->available . "\t" . $stories->collectionURI . "\n";
+    // @todo The collectionURI here is an object instead of a string like it is specified in the docs.
+    //echo $stories->available . "\t" . $stories->collectionURI . "\n";
 
     $events = $comic->events();
     echo $events->available . "\t" . $events->collectionURI . "\n";
