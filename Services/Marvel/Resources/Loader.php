@@ -13,9 +13,9 @@ abstract class Services_Marvel_Resources_Loader
     }
 
     /**
-     * @param int $page     Page 1 is the first page
-     * @param int $limit    Defaults to 100 as per the API
-     * @param array $params Valid parameters are listed here: http://developer.marvel.com/docs
+     * @param  int   $page   Page 1 is the first page
+     * @param  int   $limit  Defaults to 100 as per the API
+     * @param  array $params Valid parameters are listed here: http://developer.marvel.com/docs
      * @return mixed
      */
     public function index($page = 1, $limit = 100, $params = array())
@@ -43,6 +43,7 @@ abstract class Services_Marvel_Resources_Loader
         }
 
         $object = new $this->resource_class();
+
         return $object->bind($this->client->response_obj->data->results[0]);
     }
 }

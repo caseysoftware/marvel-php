@@ -4,8 +4,7 @@ abstract class Services_Marvel_Resources_Base
 {
     public function bind($object)
     {
-        foreach($object as $property => $value)
-        {
+        foreach ($object as $property => $value) {
             $this->$property = $value;
         }
 

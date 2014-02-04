@@ -1,6 +1,7 @@
 <?php
 
-function Services_Marvel_autoload($className) {
+function Services_Marvel_autoload($className)
+{
     $library_name = 'Services_Marvel';
 
     if (substr($className, 0, strlen($library_name)) != $library_name) {
@@ -8,6 +9,7 @@ function Services_Marvel_autoload($className) {
     }
     $file = str_replace('_', '/', $className);
     $file = str_replace('Services/', '', $file);
+
     return include dirname(__FILE__) . "/$file.php";
 }
 
@@ -49,7 +51,7 @@ class Services_Marvel
 
     /**
      * @param $uri              Base uri that the request will go to
-     * @param array $params     Additional parameters to attach to the uri
+     * @param array $params Additional parameters to attach to the uri
      */
     public function get($uri, $params = array())
     {
@@ -74,7 +76,7 @@ class Services_Marvel
         $connection = curl_init();
         $curl_params[CURLOPT_USERAGENT] = self::USER_AGENT;
 
-        foreach($curl_params as $option => $value) {
+        foreach ($curl_params as $option => $value) {
             curl_setopt($connection, $option, $value);
         }
 
