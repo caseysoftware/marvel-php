@@ -17,7 +17,7 @@ spl_autoload_register('Services_Marvel_autoload');
 
 class Services_Marvel
 {
-    const USER_AGENT = 'marvel-php/0.0.1';
+    const USER_AGENT = 'marvel-php/0.8.0';
 
     protected $baseUri = 'http://gateway.marvel.com/';
     protected $version = 'v1/public/';
