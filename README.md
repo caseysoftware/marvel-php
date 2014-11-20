@@ -13,6 +13,8 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 
 ## TODO
 
+*  Refactor to use Guzzle instead of curl, etc directly
+
 *  ~~Implement HTTP handler~~
 *  ~~Implement authentication~~
 *  Add error handling for auth errors
