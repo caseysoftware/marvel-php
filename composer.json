@@ -13,11 +13,14 @@
         }
     ],
     "require": {
-        "php": ">=5.3.8"
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "~3.7.0"
+    },
+    "require-dev": {
+        "mockery/mockery": ">=0.7.2",
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": {
-            "Services_Marvel": ""
-        }
+        "psr-4": { "Marvel\\": "src/Marvel/"}
     }
 }
