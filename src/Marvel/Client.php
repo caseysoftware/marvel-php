@@ -11,7 +11,8 @@ class Client
     protected $baseUri = 'http://gateway.marvel.com/';
     protected $version = 'v1/public/';
 
-    protected $apikey   = '';
+    protected $publicKey   = '';
+    protected $privateKey   = '';
     protected $client   = null;
     protected $request  = null;
 
@@ -19,7 +20,13 @@ class Client
     public $statusCode = null;
     public $detail   = null;
 
-    public function __construct($publicKey, $privateKey, $httpClient = null) { }
+    public function __construct($publicKey, $privateKey, $httpClient = null)
+    {
+        $this->publicKey = $publicKey;
+        $this->privateKey = $privateKey;
+        $this->client = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
+        $this->client->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
+    }
 
     public function get($uri, $params = array()) { }
 
