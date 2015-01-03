@@ -1,3 +1,4 @@
 .idea/*
-
 creds.php
+composer.lock
+vendor/*
