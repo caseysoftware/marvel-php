@@ -8,7 +8,7 @@ class Client
 {
     const USER_AGENT = 'marvel-php/0.9.0';
 
-    protected $baseUri = 'http://gateway.marvel.com/';
+    protected $baseURI = 'http://gateway.marvel.com/';
     protected $version = 'v1/public/';
 
     protected $publicKey   = '';
@@ -30,5 +30,25 @@ class Client
 
     public function get($uri, $params = array()) { }
 
-    public function __get($name) { }
+    /**
+     * @param $name
+     * @return mixed
+     * @throws Exception
+     */
+    public function __get($name)
+    {
+        $classname = ucwords(str_replace("_", " ", $name));
+        $fullclass = "Marvel\\" . str_replace(' ', '', $classname);
+
+        if (class_exists($fullclass)) {
+            return new $fullclass($this);
+        }
+
+        throw new Exception('Not supported');
+    }
+
+    public function getUri()
+    {
+        return $this->baseURI . $this->version;
+    }
 }
