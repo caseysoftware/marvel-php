@@ -33,7 +33,7 @@ class Client
     /**
      * @param $name
      * @return mixed
-     * @throws Exception
+     * @throws Exceptions\InvalidResourceException
      */
     public function __get($name)
     {
@@ -44,7 +44,7 @@ class Client
             return new $fullclass($this);
         }
 
-        throw new Exception('Not supported');
+        throw new \Marvel\Exceptions\InvalidResourceException('Resource not found');
     }
 
     public function getUri()
