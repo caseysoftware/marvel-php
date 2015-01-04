@@ -9,6 +9,7 @@ class Comics
 
     public $total = 0;
     public $count = 0;
+    public $data  = '';
 
     public function __construct(\Marvel\Client $client)
     {
@@ -23,11 +24,13 @@ class Comics
 
         $params += array('offset' => $offset, 'limit' => $limit);
 
-        $this->client->get($this->client->getUri() . $this->resource, $params);
+        $json = $this->client->get($this->client->getUri() . $this->resource, $params);
+        $data = $json['data'];
 
-        $this->total = $this->client->response->data->total;
-        $this->count = $this->client->response->data->count;
+        $this->total = $data['total'];
+        $this->count = $data['count'];
+        $this->data = $data['results'];
 
-        return $this->client->response_obj->data->results;
+        return $this;
     }
 }

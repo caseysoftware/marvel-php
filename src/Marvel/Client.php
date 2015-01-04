@@ -28,7 +28,22 @@ class Client
         $this->client->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
     }
 
-    public function get($uri, $params = array()) { }
+    public function get($uri, $params = array())
+    {
+        $timestamp = time();
+        $params['ts'] = $timestamp;
+        $params['apikey'] = $this->publicKey;
+        $params['hash'] = md5($timestamp . $this->privateKey . $this->publicKey);
+
+        $request = $this->client->get($uri, array(), array('exceptions' => false));
+        foreach($params as $key => $value) {
+            $request->getQuery()->set($key, $value);
+        }
+
+        $this->response =  $request->send();
+
+        return $this->response->json();
+    }
 
     /**
      * @param $name

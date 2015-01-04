@@ -12,4 +12,5 @@ $client = new \Marvel\Client($public_key, $private_key);
 
 $comics = $client->comics->index();
 
-print_r($comics);
+echo $comics->code . "\n";
+echo $comics->total . " comics \n\n";
