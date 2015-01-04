@@ -4,6 +4,12 @@ namespace Marvel;
 
 use Guzzle\Http;
 
+/**
+ * Class Client
+ * @package Marvel
+ *
+ * @property-read string $comics
+ */
 class Client
 {
     const USER_AGENT = 'marvel-php/0.9.0';
