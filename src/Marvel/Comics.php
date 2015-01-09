@@ -6,6 +6,7 @@ class Comics implements \Iterator
 {
     protected $client = null;
     protected $resource = 'comics';
+    protected $position = 0;
 
     public $total = 0;
     public $count = 0;
@@ -25,36 +26,37 @@ class Comics implements \Iterator
         $params += array('offset' => $offset, 'limit' => $limit);
 
         $json = $this->client->get($this->client->getUri() . $this->resource, $params);
-        $this->data = $json['data'];
+        $data = $json['data'];
 
-        $this->total = $this->data['total'];
-        $this->count = $this->data['count'];
+        $this->total = $data['total'];
+        $this->count = $data['count'];
+        $this->data = $data['results'];
 
         return $this;
     }
 
     public function rewind()
     {
-
+        $this->position = 0;
     }
 
     public function current()
     {
-
+        return $this->data[$this->position];
     }
 
     public function key()
     {
-
+        return $this->position;
     }
 
     public function next()
     {
-
+        $this->position++;
     }
 
     public function valid()
     {
-
+        return isset($this->data[$this->position]);
     }
 }
