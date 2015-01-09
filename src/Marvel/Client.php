@@ -3,6 +3,7 @@
 namespace Marvel;
 
 use Guzzle\Http;
+use Marvel\Exceptions\InvalidResource;
 
 /**
  * Class Client
@@ -55,7 +56,7 @@ class Client
     /**
      * @param $name
      * @return mixed
-     * @throws Exceptions\InvalidResourceException
+     * @throws Exceptions\InvalidResource
      */
     public function __get($name)
     {
@@ -66,7 +67,7 @@ class Client
             return new $fullclass($this);
         }
 
-        throw new \Marvel\Exceptions\InvalidResourceException('Resource not found');
+        throw new \Marvel\Exceptions\InvalidResource('Resource not found');
     }
 
     public function getUri()
