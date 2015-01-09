@@ -35,6 +35,11 @@ class Comics implements \Iterator
         return $this;
     }
 
+    public function load($id)
+    {
+
+    }
+
     public function rewind()
     {
         $this->position = 0;
