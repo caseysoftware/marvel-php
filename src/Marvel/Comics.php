@@ -2,7 +2,7 @@
 
 namespace Marvel;
 
-class Comics
+class Comics implements \Iterator
 {
     protected $client = null;
     protected $resource = 'comics';
@@ -25,12 +25,36 @@ class Comics
         $params += array('offset' => $offset, 'limit' => $limit);
 
         $json = $this->client->get($this->client->getUri() . $this->resource, $params);
-        $data = $json['data'];
+        $this->data = $json['data'];
 
-        $this->total = $data['total'];
-        $this->count = $data['count'];
-        $this->data = $data['results'];
+        $this->total = $this->data['total'];
+        $this->count = $this->data['count'];
 
         return $this;
+    }
+
+    public function rewind()
+    {
+
+    }
+
+    public function current()
+    {
+
+    }
+
+    public function key()
+    {
+
+    }
+
+    public function next()
+    {
+
+    }
+
+    public function valid()
+    {
+
     }
 }
