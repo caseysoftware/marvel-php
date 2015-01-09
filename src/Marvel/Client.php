@@ -47,6 +47,7 @@ class Client
         }
 
         $this->response =  $request->send();
+        $this->statusCode = $this->response->getStatusCode();
 
         return $this->response->json();
     }
