@@ -59,12 +59,6 @@ class Comics implements \Iterator
         $characters = new \Marvel\Characters($this->client);
         $characters->bind($this->characters);
         return $characters;
-//        print_r($this); die();
-//        /if (isset($this->payload['data'])) {
-//            $characters = new \Marvel\Characters($this->client);
-//            $characters->bind($this->payload['data']['results'])
-//        }
-        return isset($this->payload['characters']) ? $this->payload['characters'] : array();
     }
 
     public function rewind()
