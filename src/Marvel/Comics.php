@@ -2,22 +2,8 @@
 
 namespace Marvel;
 
-class Comics implements \Iterator
+class Comics extends \Marvel\Resources\Base implements \Iterator
 {
-    protected $client = null;
-    protected $resource = 'comics';
-    protected $position = 0;
-    protected $payload = '';
-
-    public $total = 0;
-    public $count = 0;
-    public $data  = '';
-
-    public function __construct(\Marvel\Client $client)
-    {
-        $this->client = $client;
-    }
-
     public function index($page = 1, $limit = 25, $params = array())
     {
         $page = max($page, 1);
@@ -45,13 +31,6 @@ class Comics implements \Iterator
         }
 
         return $this;
-    }
-
-    public function bind($hash)
-    {
-        foreach ($hash as $key => $value) {
-            $this->$key = $value;
-        }
     }
 
     public function characters()
