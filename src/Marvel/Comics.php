@@ -4,6 +4,8 @@ namespace Marvel;
 
 class Comics extends \Marvel\Resources\Base implements \Iterator
 {
+    protected $resource = 'comics';
+
     public function index($page = 1, $limit = 25, $params = array())
     {
         $page = max($page, 1);

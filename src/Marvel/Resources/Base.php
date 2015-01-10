@@ -5,7 +5,6 @@ namespace Marvel\Resources;
 abstract class Base
 {
     protected $client = null;
-    protected $resource = 'comics';
     protected $position = 0;
     protected $payload = '';
 
