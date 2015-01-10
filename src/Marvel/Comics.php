@@ -7,6 +7,7 @@ class Comics implements \Iterator
     protected $client = null;
     protected $resource = 'comics';
     protected $position = 0;
+    protected $payload = '';
 
     public $total = 0;
     public $count = 0;
@@ -37,9 +38,33 @@ class Comics implements \Iterator
 
     public function load($id)
     {
-        $payload = $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
+        $this->payload = $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
 
-        return isset($payload['data']) ? $payload['data']['results'][0] : array();
+        if (isset($this->payload['data'])) {
+            $this->bind($this->payload['data']['results'][0]);
+        }
+
+        return $this;
+    }
+
+    public function bind($hash)
+    {
+        foreach ($hash as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
+    public function characters()
+    {
+        $characters = new \Marvel\Characters($this->client);
+        $characters->bind($this->characters);
+        return $characters;
+//        print_r($this); die();
+//        /if (isset($this->payload['data'])) {
+//            $characters = new \Marvel\Characters($this->client);
+//            $characters->bind($this->payload['data']['results'])
+//        }
+        return isset($this->payload['characters']) ? $this->payload['characters'] : array();
     }
 
     public function rewind()

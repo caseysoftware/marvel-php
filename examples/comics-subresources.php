@@ -1,14 +1,14 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
 try {
     // This is the Amazing Spider-Man #620 with the Deadpool variant
-    $comic = $client->comics->get(31556);
-    echo $comic->id . "\t" . $comic->title . "\n";
+    $comic = $client->comics->load(31556);
+    echo $comic->title . "\n" . $comic->description . "\n";
 
     $characters = $comic->characters();
     echo $characters->available . "\t" . $characters->collectionURI . "\n";
