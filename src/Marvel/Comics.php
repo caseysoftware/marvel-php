@@ -37,7 +37,9 @@ class Comics implements \Iterator
 
     public function load($id)
     {
+        $payload = $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
 
+        return isset($payload['data']) ? $payload['data']['results'][0] : array();
     }
 
     public function rewind()
