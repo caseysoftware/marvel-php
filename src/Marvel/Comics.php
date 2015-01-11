@@ -49,6 +49,13 @@ class Comics extends \Marvel\Resources\Base implements \Iterator
         return $creators;
     }
 
+    public function events()
+    {
+        $events = new \Marvel\Events($this->client);
+        $events->bind($this->events);
+        return $events;
+    }
+
     public function rewind()
     {
         $this->position = 0;
