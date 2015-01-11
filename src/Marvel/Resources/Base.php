@@ -17,6 +17,11 @@ abstract class Base implements \Iterator
         $this->client = $client;
     }
 
+    public function __get($name)
+    {
+        return '';
+    }
+
     public function index($page = 1, $limit = 25, $params = array())
     {
         $page = max($page, 1);

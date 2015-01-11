@@ -1,17 +1,17 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
 try {
-    // This is Ant Man Hank Pym loaded into a Services_Marvel_Character object
-    $character = $client->characters->get(1009521);
+    // This is Apocalypse loaded into a \Marvel\Character object
+    $character = $client->characters->load(1009156);
     echo $character->id . ' ' . $character->name . "\n";
 
-    // This is a nonexistent character, so we get the exception
-    $character = $client->characters->get(1);
+    // This is a nonexistent comic, so we get an empty array back
+    $character = $client->characters->load(1);
     echo $character->id . ' ' . $character->name . "\n";
 } catch (Exception $exc) {
     echo $exc->getMessage() . "\n";
