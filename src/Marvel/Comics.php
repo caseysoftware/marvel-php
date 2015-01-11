@@ -42,6 +42,13 @@ class Comics extends \Marvel\Resources\Base implements \Iterator
         return $characters;
     }
 
+    public function creators()
+    {
+        $creators = new \Marvel\Creators($this->client);
+        $creators->bind($this->creators);
+        return $creators;
+    }
+
     public function rewind()
     {
         $this->position = 0;
