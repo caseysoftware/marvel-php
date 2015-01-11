@@ -2,7 +2,7 @@
 
 namespace Marvel;
 
-class Comics extends \Marvel\Resources\Base implements \Iterator
+class Comics extends \Marvel\Resources\Base
 {
     protected $resource = 'comics';
 
@@ -61,30 +61,5 @@ class Comics extends \Marvel\Resources\Base implements \Iterator
         $series = new \Marvel\Series($this->client);
         $series->bind($this->series);
         return $series;
-    }
-
-    public function rewind()
-    {
-        $this->position = 0;
-    }
-
-    public function current()
-    {
-        return $this->data[$this->position];
-    }
-
-    public function key()
-    {
-        return $this->position;
-    }
-
-    public function next()
-    {
-        $this->position++;
-    }
-
-    public function valid()
-    {
-        return isset($this->data[$this->position]);
     }
 }
