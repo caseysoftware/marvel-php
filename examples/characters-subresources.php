@@ -1,12 +1,13 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
 try {
-    $character = $client->characters->get(1009368);
+    // This is Apocalypse loaded into a \Marvel\Character object
+    $character = $client->characters->load(1009156);
     echo $character->id . "\t" . $character->name . "\n";
 
     $comics = $character->comics();
