@@ -16,32 +16,4 @@ class Characters extends \Marvel\Resources\Base
 
         return $this;
     }
-
-    public function comics()
-    {
-        $comics = new \Marvel\Comics($this->client);
-        $comics->bind($this->comics);
-        return $comics;
-    }
-
-    public function creators()
-    {
-        $creators = new \Marvel\Creators($this->client);
-        $creators->bind($this->creators);
-        return $creators;
-    }
-
-    public function events()
-    {
-        $events = new \Marvel\Events($this->client);
-        $events->bind($this->events);
-        return $events;
-    }
-
-    public function series()
-    {
-        $series = new \Marvel\Series($this->client);
-        $series->bind($this->series);
-        return $series;
-    }
 }

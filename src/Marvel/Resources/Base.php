@@ -22,6 +22,17 @@ abstract class Base implements \Iterator
         return '';
     }
 
+    public function __call($name, $params)
+    {
+        if (isset($this->$name)) {
+            $class = '\Marvel\\' . ucwords($name);
+
+            $object = new $class($this->client);
+            $object->bind($this->$name);
+            return $object;
+        }
+    }
+
     public function index($page = 1, $limit = 25, $params = array())
     {
         $page = max($page, 1);
