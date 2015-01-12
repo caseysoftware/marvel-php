@@ -1,21 +1,20 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
+
+$client = new \Marvel\Client($public_key, $private_key);
 
 $foundDoctors = false;
 $doctors = array();
 
-// First initiatialize the Marvel client object, it does all the heavy lifting.
-$client = new Services_Marvel($public_key, $private_key);
-
-for ($i = 5; $i < 20; $i++) {
+for ($i = 10; $i < 20; $i++) {
     // Use the Characters resource to retrieve one page of characters
     $characters = $client->characters->index($i, 25);
 
     // Iterate over the characters looking at their names
     foreach ($characters as $character) {
-        if (strpos($character->name, 'Doctor') !== false) {
+        if (strpos($character['name'], 'Doctor') !== false) {
             $foundDoctors = true;
             $doctors[] = $character;
         }
