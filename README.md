@@ -1,4 +1,4 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/?branch=master) [![Code Climate](https://codeclimate.com/github/caseysoftware/marvel-php/badges/gpa.svg)](https://codeclimate.com/github/caseysoftware/marvel-php)
 
 marvel-php
 ==========
