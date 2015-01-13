@@ -51,6 +51,17 @@ abstract class Base implements \Iterator
         return $this;
     }
 
+    public function load($id)
+    {
+        $this->payload = $this->client->get($this->client->getUri() . $this->resource . '/' . $id);
+
+        if (isset($this->payload['data'])) {
+            $this->bind($this->payload['data']['results'][0]);
+        }
+
+        return $this;
+    }
+
     public function bind($hash)
     {
         foreach ($hash as $key => $value) {
