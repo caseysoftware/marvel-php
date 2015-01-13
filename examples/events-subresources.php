@@ -1,12 +1,12 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
 try {
-    $event = $client->events->get(238);
+    $event = $client->events->load(238);
     echo $event->title . "\n";
 
     $characters = $event->characters();

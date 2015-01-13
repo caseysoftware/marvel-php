@@ -1,18 +1,14 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
-try {
-    // This is Civil War loaded into a Services_Marvel_Event object
-    $event = $client->events->get(238);
-    echo $event->title . "\n";
+// This is Civil War loaded into a Services_Marvel_Event object
+$event = $client->events->load(238);
+echo $event->title . "\n";
 
-    // This is a nonexistent event, so we get the exception
-    $event = $client->events->get(1);
-    echo $event->title . "\n";
-} catch (Exception $exc) {
-    echo $exc->getMessage() . "\n";
-}
+// This is a nonexistent event, so we get the exception
+$event = $client->events->load(1);
+echo $event->title . "\n";
