@@ -13,36 +13,31 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 
 ## TODO
 
-*  Refactor to use Guzzle instead of curl, etc directly
-
-*  Implement HTTP handler
-*  Implement authentication
-*  Add error handling for auth errors
-*  Convert to using Guzzle for php 5.3+
-*  Implement Character List and pagination
-*  Implement the optional parameters for the Character List
-*  Implement Character Load
-*  Implement Character's comic lookup, events lookup, stories lookup
-*  Implement Comic List and pagination
-*  Implement the optional parameters for the Comic List
-*  Implement Comic Load
-*  Implement Comic's character lookup, creators lookup, events lookup, stories lookup
-*  Implement Creators List and pagination
-*  Implement the optional parameters for the Creator List
-*  Implement Creator Load
-*  Implement Creator's comic lookup, events lookup, stories lookup
-*  Implement Event List and pagination
-*  Implement the optional parameters for the Event List
-*  Implement Event Load
-*  Implement Event's character lookup, comic lookup, creator lookup, stories lookup
-*  Implement Series List and pagination
-*  Implement the optional parameters for the Series List
-*  Implement Series Load
-*  Implement Series' character lookup, comic lookup, creator lookup, event lookup, stories lookup
-*  Implement Stories List and pagination
-*  Implement the optional parameters for the Story List
-*  Implement Story Load
-*  Implement Stories' character lookup, comic lookup, creator lookup, event lookup
+*  ~~Refactor to use Guzzle instead of curl, etc directly~~
+*  ~~Implement Character List and pagination~~
+*  ~~Implement the optional parameters for the Character List~~
+*  ~~Implement Character Load~~
+*  ~~Implement Character's comic lookup, events lookup, stories lookup~~
+*  ~~Implement Comic List and pagination~~
+*  ~~Implement the optional parameters for the Comic List~~
+*  ~~Implement Comic Load~~
+*  ~~Implement Comic's character lookup, creators lookup, events lookup, stories lookup~~
+*  ~~Implement Creators List and pagination~~
+*  ~~Implement the optional parameters for the Creator List~~
+*  ~~Implement Creator Load~~
+*  ~~Implement Creator's comic lookup, events lookup, stories lookup~~
+*  ~~Implement Event List and pagination~~
+*  ~~Implement the optional parameters for the Event List~~
+*  ~~Implement Event Load~~
+*  ~~Implement Event's character lookup, comic lookup, creator lookup, stories lookup~~
+*  ~~Implement Series List and pagination~~
+*  ~~Implement the optional parameters for the Series List~~
+*  ~~Implement Series Load~~
+*  ~~Implement Series' character lookup, comic lookup, creator lookup, event lookup, stories lookup~~
+*  ~~Implement Stories List and pagination~~
+*  ~~Implement the optional parameters for the Story List~~
+*  ~~Implement Story Load~~
+*  ~~Implement Stories' character lookup, comic lookup, creator lookup, event lookup~~
 
 ## Notes
 
