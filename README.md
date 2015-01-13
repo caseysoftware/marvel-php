@@ -41,6 +41,5 @@ This assumes you have cURL installed along with the corresponding php-curl inter
 
 ## Notes
 
-*  The character name search doesn't support wildcards at all. It is looking for exact matches. For example, if you search for 'Spider Man' it won't find 'Spider-Man' which is the proper spelling.
-*  The index/list lookups take progressively longer the higher page number you request. For example, page 10 takes longer to load than page 3 which takes longer than page 1. I have not confirmed if this is linear.
+*  The character name search doesn't support wildcards but you can use terms like 'nameStartsWith' to perform more interesting searches like finding every instanace of 'Spider-Man' by just using 'Spider'.
 *  So far the optional parameters have no validation in this library... I'm not sure if it should occur here as it may break later versions of the API as those requirements change.
