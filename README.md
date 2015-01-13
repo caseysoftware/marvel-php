@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/?branch=master)
+
 marvel-php
 ==========
 
