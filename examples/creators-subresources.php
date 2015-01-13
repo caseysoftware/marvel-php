@@ -1,12 +1,12 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 
 try {
-    $creator = $client->creators->get(5251);
+    $creator = $client->creators->load(5251);
     echo $creator->firstName . ' ' . $creator->lastName . "\n";
 
     $comics = $creator->comics();

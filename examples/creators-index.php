@@ -8,5 +8,5 @@ $client = new \Marvel\Client($public_key, $private_key);
 $creators = $client->creators->index(1, 25);
 
 foreach ($creators as $creator) {
-    echo $creator->fullName . "\n";
+    echo $creator['fullName'] . "\n";
 }

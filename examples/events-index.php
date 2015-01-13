@@ -1,11 +1,11 @@
 <?php
 
 include_once '../creds.php';
-include_once '../Services/Marvel.php';
+include_once '../vendor/autoload.php';
 
-$client = new Services_Marvel($public_key, $private_key);
+$client = new \Marvel\Client($public_key, $private_key);
 $events = $client->events->index(1, 25);
 
 foreach ($events as $event) {
-    echo $event->title . "\n";
+    echo $event['title'] . "\n";
 }
