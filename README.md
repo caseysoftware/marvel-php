@@ -11,7 +11,7 @@ All characters - no matter how awesome they are - are owned by Marvel Comics. Al
 
 ## Requirements
 
-This assumes you have cURL installed along with the corresponding php-curl interface. It should be extended to support HTTP Streams but I'm kinda lazy.
+This uses Composer and namespaces so PHP 5.3.x is the minimum version. I'd suggest you use something more recent but that's up to you.
 
 ## TODO
 
