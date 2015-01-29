@@ -7,5 +7,5 @@ $client = new \Marvel\Client($public_key, $private_key);
 $events = $client->events->index(1, 25);
 
 foreach ($events as $event) {
-    echo $event['title'] . "\n";
+    echo $event->title . "\n";
 }

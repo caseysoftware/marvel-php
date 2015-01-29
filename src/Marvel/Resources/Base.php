@@ -76,7 +76,9 @@ abstract class Base implements \Iterator
 
     public function current()
     {
-        return $this->data[$this->position];
+        $this->bind($this->data[$this->position]);
+
+        return $this;
     }
 
     public function key()

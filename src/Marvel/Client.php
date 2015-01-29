@@ -13,7 +13,7 @@ use Marvel\Exceptions\InvalidResource;
  */
 class Client
 {
-    const USER_AGENT = 'marvel-php/0.9.0';
+    const USER_AGENT = 'marvel-php/1.1.0';
 
     protected $baseURI = 'http://gateway.marvel.com/';
     protected $version = 'v1/public/';

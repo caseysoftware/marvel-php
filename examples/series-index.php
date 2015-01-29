@@ -7,5 +7,5 @@ $client = new \Marvel\Client($public_key, $private_key);
 $serii = $client->series->index(1, 25);
 
 foreach ($serii as $series) {
-    echo $series['title'] . "\n";
+    echo $series->title . "\n";
 }

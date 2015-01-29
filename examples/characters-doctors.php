@@ -10,5 +10,5 @@ $characters = $client->characters->index(1, 50, array('nameStartsWith' => 'Docto
 echo "There are " . $characters->count() . " doctors by name alone.\n";
 
 foreach($characters as $character) {
-    echo $character['id'] . "\t" . $character['name'] . "\n";
+    echo $character->id . "\t" . $character->name . "\n";
 }

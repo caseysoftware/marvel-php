@@ -1,6 +1,6 @@
 {
     "name": "caseysoftware/marvel-helper",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "library",
     "description": "A PHP wrapper for the Marvel Comics API",
     "keywords": ["marvel", "comic", "api", "marvel comics", "avengers", "x-men"],
