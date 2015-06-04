@@ -1,13 +1,48 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/caseysoftware/marvel-php/?branch=master) [![Code Climate](https://codeclimate.com/github/caseysoftware/marvel-php/badges/gpa.svg)](https://codeclimate.com/github/caseysoftware/marvel-php)
 
-marvel-php
+The Unofficial Marvel PHP Library
 ==========
 
 This is a helper library for the Marvel Comics API - http://developer.marvel.com/
 
+
 This isn't official but should generally work except for the incomplete items in the TODO list below.
 
 All characters - no matter how awesome they are - are owned by Marvel Comics. Also, if you use this library, make sure you follow their attribution rules: http://developer.marvel.com/documentation/attribution
+
+### Installing via Composer
+
+The recommended way to install the Marvel library is through [Composer](http://getcomposer.org).
+
+```bash
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+
+# Add the library as a dependency
+php composer.phar require caseysoftware/marvel-php ~1.1
+```
+
+or alternatively, you can add it directly to your `composer.json` file.
+
+```json
+{
+    "require": {
+        "caseysoftware/marvel-php": "~1.1"
+    }
+}
+```
+
+Then install via Composer:
+
+```bash
+composer install
+```
+
+Finally, require Composer's autoloader in your PHP script:
+
+```php
+require __DIR__.'/vendor/autoload.php';
+```
 
 ## Requirements
 
