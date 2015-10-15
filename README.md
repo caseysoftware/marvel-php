@@ -19,7 +19,7 @@ The recommended way to install the Marvel library is through [Composer](http://g
 curl -sS https://getcomposer.org/installer | php
 
 # Add the library as a dependency
-php composer.phar require caseysoftware/marvel-php ~1.1
+php composer.phar require caseysoftware/marvel-helper ~1.1
 ```
 
 or alternatively, you can add it directly to your `composer.json` file.
@@ -27,7 +27,7 @@ or alternatively, you can add it directly to your `composer.json` file.
 ```json
 {
     "require": {
-        "caseysoftware/marvel-php": "~1.1"
+        "caseysoftware/marvel-helper": "~1.1"
     }
 }
 ```
