@@ -78,5 +78,5 @@ This uses Composer and namespaces so PHP 5.3.x is the minimum version. I'd sugge
 
 ## Notes
 
-*  The character name search doesn't support wildcards but you can use terms like 'nameStartsWith' to perform more interesting searches like finding every instanace of 'Spider-Man' by just using 'Spider'.
+*  The character name search doesn't support wildcards but you can use terms like 'nameStartsWith' to perform more interesting searches like finding every instance of 'Spider-Man' by just using 'Spider'.
 *  So far the optional parameters have no validation in this library... I'm not sure if it should occur here as it may break later versions of the API as those requirements change.
