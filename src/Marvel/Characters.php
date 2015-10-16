@@ -15,6 +15,9 @@ class Characters extends \Marvel\Resources\Base
     {
         $team = array();
 
+        $characters = $this->index(1, 25, array('name' => 'Captain America'));
+        $team[] = $characters->data[0];
+
         $characters = $this->index(1, 25, array('name' => 'Iron Man'));
         $team[] = $characters->data[0];
 
@@ -28,6 +31,9 @@ class Characters extends \Marvel\Resources\Base
         $team[] = $characters->data[0];
 
         $characters = $this->index(1, 25, array('name' => 'Hank Pym'));
+        $team[] = $characters->data[0];
+
+        $characters = $this->index(1, 25, array('name' => 'Black Widow'));
         $team[] = $characters->data[0];
 
         return $team;
