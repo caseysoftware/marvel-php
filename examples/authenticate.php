@@ -1,6 +1,6 @@
 <?php
 
-include_once '../creds.php';
+include_once '../credentials.php';
 include_once '../vendor/autoload.php';
 
 /**

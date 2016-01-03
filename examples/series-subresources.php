@@ -1,6 +1,6 @@
 <?php
 
-include_once '../creds.php';
+include_once '../credentials.php';
 include_once '../vendor/autoload.php';
 
 $client = new \Marvel\Client($public_key, $private_key);
