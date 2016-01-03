@@ -1,4 +1,5 @@
 .idea/*
-creds.php
+credentials.php
 composer.lock
 vendor/*
+

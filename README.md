@@ -19,7 +19,7 @@ The recommended way to install the Marvel library is through [Composer](http://g
 curl -sS https://getcomposer.org/installer | php
 
 # Add the library as a dependency
-php composer.phar require caseysoftware/marvel-helper ~1.1
+php composer.phar require caseysoftware/marvel-helper ~2.0
 ```
 
 or alternatively, you can add it directly to your `composer.json` file.
@@ -27,7 +27,7 @@ or alternatively, you can add it directly to your `composer.json` file.
 ```json
 {
     "require": {
-        "caseysoftware/marvel-helper": "~1.1"
+        "caseysoftware/marvel-helper": "~2.0"
     }
 }
 ```
@@ -44,9 +44,7 @@ Finally, require Composer's autoloader in your PHP script:
 require __DIR__.'/vendor/autoload.php';
 ```
 
-## Requirements
-
-This uses Composer and namespaces so PHP 5.3.x is the minimum version. I'd suggest you use something more recent but that's up to you.
+To use any of the examples, rename credentials-dist.php to credentials.php and add your API key from here: https://developer.marvel.com/account
 
 ## TODO
 
