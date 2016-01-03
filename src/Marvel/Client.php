@@ -2,7 +2,7 @@
 
 namespace Marvel;
 
-use Guzzle\Http;
+use GuzzleHttp\Client as GuzzleClient;
 use Marvel\Exceptions\InvalidResource;
 
 /**
@@ -31,8 +31,9 @@ class Client
     {
         $this->publicKey = $publicKey;
         $this->privateKey = $privateKey;
-        $this->client = (is_null($httpClient)) ? new Http\Client($this->baseURI) : $httpClient;
-        $this->client->setUserAgent($this::USER_AGENT . '/' . PHP_VERSION);
+        $this->httpClient = (is_null($httpClient)) ? new GuzzleClient(
+            ['base_uri' => $this->baseURI, 'headers' => ['User-Agent' => $this::USER_AGENT . '/' . PHP_VERSION ]]
+        ) : $httpClient;
     }
 
     public function get($uri, $params = array())
@@ -42,15 +43,12 @@ class Client
         $params['apikey'] = $this->publicKey;
         $params['hash'] = md5($timestamp . $this->privateKey . $this->publicKey);
 
-        $request = $this->client->get($uri, array(), array('exceptions' => false));
-        foreach($params as $key => $value) {
-            $request->getQuery()->set($key, $value);
-        }
+        $this->response = $this->httpClient->get($uri, ['exceptions' => false, 'query' => $params] );
 
-        $this->response =  $request->send();
         $this->statusCode = $this->response->getStatusCode();
+        $raw_body = $this->response->getBody();
 
-        return $this->response->json();
+        return json_decode($raw_body, true);
     }
 
     /**
@@ -67,7 +65,7 @@ class Client
             return new $fullclass($this);
         }
 
-        throw new \Marvel\Exceptions\InvalidResource('Resource not found');
+        throw new InvalidResource('Resource not found');
     }
 
     public function getUri()
